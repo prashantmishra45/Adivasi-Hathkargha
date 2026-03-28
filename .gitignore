@@ -6,3 +6,4 @@ coverage/
 *.log
 .env*
 !.env.example
+recording web-1.mp4
