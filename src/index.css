@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  
+  --color-terracotta-50: #fcf4f2;
+  --color-terracotta-100: #f8e5e0;
+  --color-terracotta-500: #c2410c;
+  --color-terracotta-600: #9c3315;
+  --color-terracotta-700: #7f270e;
+  --color-terracotta-800: #66220f;
+  
+  --color-ochre-400: #dca54c;
+  --color-ochre-500: #c48b31;
+  --color-ochre-600: #a37023;
+  
+  --color-forest-800: #2d4a22;
+  --color-forest-900: #1a2e11;
+  
+  --color-sand-50: #f9f8f6;
+  --color-sand-100: #f2efe9;
+  --color-sand-200: #e6dfd3;
+}
+
+@layer base {
+  html {
+    font-family: "Poppins", system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-sand-50 text-stone-900 dark:bg-stone-950 dark:text-sand-50 transition-colors duration-300;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+/* Tribal Art Background Utility */
+.bg-tribal-art {
+  background-image: url('https://images.unsplash.com/photo-1582561424760-0321d6daa24e?auto=format&fit=crop&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Authentic Tribal Geometric Pattern for Dark Mode */
+.dark-tribal-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30L30 0zM30 15L15 30L30 45L45 30L30 15z M0 0h15v15H0V0z M45 0h15v15H45V0z M0 45h15v15H0V45z M45 45h15v15H45V45z' fill='%23dca54c' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* Authentic Tribal Geometric Pattern for Light Mode */
+.light-tribal-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30L30 0zM30 15L15 30L30 45L45 30L30 15z M0 0h15v15H0V0z M45 0h15v15H45V0z M0 45h15v15H0V45z M45 45h15v15H45V45z' fill='%239c3315' fill-opacity='0.08' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* Tribal Border Pattern */
+.tribal-border-top {
+  border-top: 8px solid transparent;
+  border-image: repeating-linear-gradient(
+    45deg,
+    var(--color-terracotta-600),
+    var(--color-terracotta-600) 10px,
+    var(--color-ochre-500) 10px,
+    var(--color-ochre-500) 20px
+  ) 8;
+}
+
+.tribal-border-bottom {
+  border-bottom: 8px solid transparent;
+  border-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-terracotta-600),
+    var(--color-terracotta-600) 10px,
+    var(--color-ochre-500) 10px,
+    var(--color-ochre-500) 20px
+  ) 8;
+}
+
+/* Flip Card Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+.group:hover .group-hover\:rotate-y-180 {
+  transform: rotateY(180deg);
+}
